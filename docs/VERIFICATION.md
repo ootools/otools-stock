@@ -29,7 +29,7 @@
 - **没有可连接浏览器**：按 Browser 技能初始化；`getForUrl` 返回 “No browser is available”，官方 troubleshooting 后 `browsers.list()` 返回空数组。
 - 因而未完成真实浏览器截图、宽/窄 Panel 视觉确认、实际浏览器通知/音频与下载确认。组件/jsdom 验证不是视觉 QA。
 - 未在实际运行的 OTools Panel 安装/加载。SDK HTTP/storage/文件合同已用工作区官方代码核对和 production DOM 验证，但真实宿主冷启动仍需人工验收。
-- 发布状态与平台下载附件见 `RELEASE.md` 和 `artifacts/release-verification.txt`（用户已追加授权建仓/子模块/六包发布，验收记录以实际完成状态为准）。
+- **远程发布已验证**：GitHub 公开仓库/main 与版本 tag、六包上传后下载对比、GitHub CI、源码独立构建、市场 packageMode=1 六链接读回均通过。详情见 `RELEASE.md` 与 `artifacts/release-verification.txt`。
 
 ## 人工验收建议
 

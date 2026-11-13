@@ -1,0 +1,104 @@
+{
+  "date": "2026-11-13",
+  "repository": "ootools/otools-stock",
+  "repositoryVisibility": "public",
+  "parentRepository": "xyito/xyito",
+  "submodulePath": "otools/otools-stock",
+  "version": "0.1.0",
+  "tag": "plugin-otools-stock-v0.1.0",
+  "releaseSourceCommit": "3f4301c371360f51f46f4fe7d7d327c907b70530",
+  "release": "https://github.com/ootools/otools-stock/releases/tag/plugin-otools-stock-v0.1.0",
+  "githubCI": {
+    "runId": 43376299983,
+    "status": "success",
+    "build": "portable-six-pack"
+  },
+  "verification": {
+    "vitestTests": 128,
+    "nodeTests": 18,
+    "failures": 0,
+    "sourceArchiveIndependentBuild": "passed",
+    "typecheck": "passed",
+    "sixPackageIntegrity": "passed",
+    "downloadedVsLocalBytes": "identical",
+    "actualOSPanelVisual": "not verified"
+  },
+  "portableFrontend": true,
+  "packageMode": 1,
+  "marketReadback": {
+    "packid": "otools-stock",
+    "version": "0.1.0",
+    "packageMode": 1,
+    "logo": "https://raw.githubusercontent.com/ootools/otools-stock/plugin-otools-stock-v0.1.0/logo.svg",
+    "packageUrlWindows": "https://github.com/ootools/otools-stock/releases/download/plugin-otools-stock-v0.1.0/otools-stock-0.1.0-windows.oplg",
+    "packageUrlWindowsArm": "https://github.com/ootools/otools-stock/releases/download/plugin-otools-stock-v0.1.0/otools-stock-0.1.0-windows-arm.oplg",
+    "packageUrlMacos": "https://github.com/ootools/otools-stock/releases/download/plugin-otools-stock-v0.1.0/otools-stock-0.1.0-macos.oplg",
+    "packageUrlMacosIntel": "https://github.com/ootools/otools-stock/releases/download/plugin-otools-stock-v0.1.0/otools-stock-0.1.0-macos-intel.oplg",
+    "packageUrlLinux": "https://github.com/ootools/otools-stock/releases/download/plugin-otools-stock-v0.1.0/otools-stock-0.1.0-linux.oplg",
+    "packageUrlLinuxArm": "https://github.com/ootools/otools-stock/releases/download/plugin-otools-stock-v0.1.0/otools-stock-0.1.0-linux-arm.oplg"
+  },
+  "packages": [
+    {
+      "platform": "windows",
+      "arch": "x64",
+      "suffix": "windows",
+      "field": "packageUrlWindows",
+      "filename": "otools-stock-0.1.0-windows.oplg",
+      "bytes": 84422,
+      "sha256": "7285ef02b7b992d73c6238e2a97d0ef1d401afe246d5e3d763186e6a23699c76",
+      "nativeLibraries": 0
+    },
+    {
+      "platform": "windows",
+      "arch": "arm64",
+      "suffix": "windows-arm",
+      "field": "packageUrlWindowsArm",
+      "filename": "otools-stock-0.1.0-windows-arm.oplg",
+      "bytes": 84422,
+      "sha256": "7285ef02b7b992d73c6238e2a97d0ef1d401afe246d5e3d763186e6a23699c76",
+      "nativeLibraries": 0
+    },
+    {
+      "platform": "macos",
+      "arch": "arm64",
+      "suffix": "macos",
+      "field": "packageUrlMacos",
+      "filename": "otools-stock-0.1.0-macos.oplg",
+      "bytes": 84422,
+      "sha256": "7285ef02b7b992d73c6238e2a97d0ef1d401afe246d5e3d763186e6a23699c76",
+      "nativeLibraries": 0
+    },
+    {
+      "platform": "macos",
+      "arch": "x64",
+      "suffix": "macos-intel",
+      "field": "packageUrlMacosIntel",
+      "filename": "otools-stock-0.1.0-macos-intel.oplg",
+      "bytes": 84422,
+      "sha256": "7285ef02b7b992d73c6238e2a97d0ef1d401afe246d5e3d763186e6a23699c76",
+      "nativeLibraries": 0
+    },
+    {
+      "platform": "linux",
+      "arch": "x64",
+      "suffix": "linux",
+      "field": "packageUrlLinux",
+      "filename": "otools-stock-0.1.0-linux.oplg",
+      "bytes": 84422,
+      "sha256": "7285ef02b7b992d73c6238e2a97d0ef1d401afe246d5e3d763186e6a23699c76",
+      "nativeLibraries": 0
+    },
+    {
+      "platform": "linux",
+      "arch": "arm64",
+      "suffix": "linux-arm",
+      "field": "packageUrlLinuxArm",
+      "filename": "otools-stock-0.1.0-linux-arm.oplg",
+      "bytes": 84422,
+      "sha256": "7285ef02b7b992d73c6238e2a97d0ef1d401afe246d5e3d763186e6a23699c76",
+      "nativeLibraries": 0
+    }
+  ],
+  "parentRegistration": "local .gitmodules and gitlink registered; scoped parent push follows",
+  "rawLogoDirectNetwork": "local direct raw.githubusercontent.com request failed; exact tagged SVG exists and was verified via GitHub contents API; market points to canonical raw tag URL"
+}

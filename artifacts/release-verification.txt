@@ -1,0 +1,22 @@
+OTools Stock v0.1.0 release verification — 2026-11-13 Asia/Shanghai
+Repository: https://github.com/ootools/otools-stock (public, main)
+Release: https://github.com/ootools/otools-stock/releases/tag/plugin-otools-stock-v0.1.0
+Release source commit: 3f4301c371360f51f46f4fe7d7d327c907b70530
+GitHub CI run 43376299983: success; full build/test/six-pack integrity job passed.
+Independent source export: locked install, typecheck, build, offline tests and six-pack verification passed without parent source paths.
+Tests: 128 Vitest + 18 Node tests, zero failures (live-DOM enabled locally).
+Six published archives: CRC/SHA256 verified; re-downloaded release bytes identical to local build.
+Market publish: explicit HTTP/business success; read-back version=0.1.0, packageMode=1, six platform URLs and tagged raw logo match.
+Parent registration: xyito/xyito path otools/otools-stock; only .gitmodules + this gitlink are in parent commit scope.
+
+windows/x64: otools-stock-0.1.0-windows.oplg | 84422 bytes | sha256 7285ef02b7b992d73c6238e2a97d0ef1d401afe246d5e3d763186e6a23699c76
+windows/arm64: otools-stock-0.1.0-windows-arm.oplg | 84422 bytes | sha256 7285ef02b7b992d73c6238e2a97d0ef1d401afe246d5e3d763186e6a23699c76
+macos/arm64: otools-stock-0.1.0-macos.oplg | 84422 bytes | sha256 7285ef02b7b992d73c6238e2a97d0ef1d401afe246d5e3d763186e6a23699c76
+macos/x64: otools-stock-0.1.0-macos-intel.oplg | 84422 bytes | sha256 7285ef02b7b992d73c6238e2a97d0ef1d401afe246d5e3d763186e6a23699c76
+linux/x64: otools-stock-0.1.0-linux.oplg | 84422 bytes | sha256 7285ef02b7b992d73c6238e2a97d0ef1d401afe246d5e3d763186e6a23699c76
+linux/arm64: otools-stock-0.1.0-linux-arm.oplg | 84422 bytes | sha256 7285ef02b7b992d73c6238e2a97d0ef1d401afe246d5e3d763186e6a23699c76
+
+Privacy/safety: market PAT entered only process environment; mask token lines removed before output, no credential persisted; no unrelated modules included.
+Scope: pure frontend assets share the same payload across six architecture names; no fake native libraries.
+Manual QA remains: actual installed OTools Panel/OS runtime screenshots, notifications/audio UI unverified (no connected browser).
+Local direct raw.githubusercontent.com network failed; tagged logo source was confirmed through GitHub contents API and correct raw URL persisted in marketplace. No false direct-network success claim.

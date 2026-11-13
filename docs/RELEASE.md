@@ -66,3 +66,13 @@ node scripts/publish-market.mjs | sed '/^::add-mask::/d'
 ## 当前验收限制
 
 已验证真实接口/生产 DOM/交易账本/包完整性；当前连接没有真实浏览器，尚未做各平台实机 Panel 截图、系统通知、声音或下载 UI 测试。行情可能限流/延时，不是券商交易软件。
+
+## v0.1.0 已完成发布验证（2026-11-13）
+
+- GitHub 仓库已创建为公开仓库，main 已推送。
+- Release `plugin-otools-stock-v0.1.0` 指向源代码提交 `3f4301c371360f51f46f4fe7d7d327c907b70530`，六个包均已上传，下载回本机逐字节对比通过。
+- GitHub CI run `43376299983` 全部成功；源码导出独立目录安装/构建/测试通过。
+- OTools 市场已返回成功，公开列表读回 `version=0.1.0`、`packageMode=1` 与全部六个链接均正确。
+- 发布元信息与包摘要见 `artifacts/release-verification.json` 和 `.txt`；对应 Release 附件 `SHA256SUMS`。
+- 标记的 source tag 不会因后续发布记录文档提交而移动。父仓库仍只提交该子模块及 `.gitmodules`。
+- 本机 raw.githubusercontent.com 直连请求失败，已通过 GitHub contents API 核对 tag 下 SVG 存在；市场记录使用正确的原始 tag URL。尚未声称六系统实机 UI 验收通过。
