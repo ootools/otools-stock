@@ -56,3 +56,34 @@ test('six-package aggregate passes verification; missing or corrupt platform fil
   const missing=run('verify-plugin',directory);assert.notEqual(missing.status,0);assert.match(missing.stderr,/缺少|不存在|ENOENT/)
  } finally {rmSync(directory,{recursive:true,force:true})}
 })
+
+test('ZIP encryption or inconsistent local headers are rejected even after outer digests are refreshed', {skip:!existsSync(path.join(root,'dist/index.html'))},()=>{
+ const directory=mkdtempSync(path.join(tmpdir(),'otools-stock-zip-headers-'))
+ const run=(script,...args)=>spawnSync(process.execPath,[`scripts/${script}.mjs`,...args],{cwd:root,encoding:'utf8'})
+ try {
+  assert.equal(run('pack-plugin','--all-platforms','--out',directory).status,0)
+  const meta=JSON.parse(readFileSync(path.join(directory,'meta.json'),'utf8'))
+  const original=readFileSync(path.join(directory,meta.variants[0].filename))
+  let end=original.length-22
+  assert.equal(original.readUInt32LE(end),0x06054b50)
+  const central=original.readUInt32LE(end+16),local=original.readUInt32LE(central+42)
+  const cases=[
+   buffer=>{buffer.writeUInt16LE(buffer.readUInt16LE(central+8)|1,central+8);buffer.writeUInt16LE(buffer.readUInt16LE(local+6)|1,local+6)},
+   buffer=>buffer.writeUInt32LE((buffer.readUInt32LE(local+14)^1)>>>0,local+14),
+   buffer=>buffer.writeUInt16LE(buffer.readUInt16LE(local+8)===8?0:8,local+8),
+   buffer=>buffer.writeUInt32LE(buffer.readUInt32LE(local+18)+1,local+18),
+  ]
+  for(const mutate of cases){
+   const altered=Buffer.from(original);mutate(altered)
+   const digest=createHash('sha256').update(altered).digest('hex')
+   for(const item of meta.variants){writeFileSync(path.join(directory,item.filename),altered);item.sha256=digest;item.bytes=altered.length}
+   writeFileSync(path.join(directory,'meta.json'),JSON.stringify(meta,null,2)+'\n')
+   const releaseFiles=[...meta.variants.map(item=>item.filename),'plugin.json','logo.svg']
+   const sums=releaseFiles.map(name=>`${createHash('sha256').update(readFileSync(path.join(directory,name))).digest('hex')}  ${name}`)
+   writeFileSync(path.join(directory,'SHA256SUMS'),sums.join('\n')+'\n')
+   const checked=run('verify-plugin',directory)
+   assert.notEqual(checked.status,0,'Malformed ZIP passed despite matching outer digests')
+   assert.match(checked.stderr,/ZIP|加密|本地头/)
+  }
+ } finally {rmSync(directory,{recursive:true,force:true})}
+})

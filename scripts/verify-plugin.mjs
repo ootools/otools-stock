@@ -29,10 +29,14 @@ function readZip(buffer) {
   const entries=[]
   for(let index=0;index<count;index++) {
     if(offset+46>end||buffer.readUInt32LE(offset)!==0x02014b50)fail('ZIP 中央目录无效')
+    const flags=buffer.readUInt16LE(offset+8)
+    if((flags & 0x0041)!==0)fail('ZIP 不允许加密条目')
+    if((flags & ~0x0800)!==0)fail('ZIP 包含不支持的标志或数据描述符')
     const method=buffer.readUInt16LE(offset+10),crc=buffer.readUInt32LE(offset+16),compressed=buffer.readUInt32LE(offset+20),size=buffer.readUInt32LE(offset+24)
     const nameLength=buffer.readUInt16LE(offset+28),extraLength=buffer.readUInt16LE(offset+30),commentLength=buffer.readUInt16LE(offset+32),local=buffer.readUInt32LE(offset+42)
     const name=buffer.toString('utf8',offset+46,offset+46+nameLength);safePath(name)
     if(![0,8].includes(method)||size>128*1024*1024||local+30>buffer.length||buffer.readUInt32LE(local)!==0x04034b50)fail(`ZIP 本地头/压缩格式无效：${name}`)
+    if(buffer.readUInt16LE(local+6)!==flags||buffer.readUInt16LE(local+8)!==method||buffer.readUInt32LE(local+14)!==crc||buffer.readUInt32LE(local+18)!==compressed||buffer.readUInt32LE(local+22)!==size)fail(`ZIP 本地头与中央目录不一致：${name}`)
     const localNameLength=buffer.readUInt16LE(local+26),localExtraLength=buffer.readUInt16LE(local+28)
     if(buffer.toString('utf8',local+30,local+30+localNameLength)!==name)fail(`ZIP 内外文件名不同：${name}`)
     const begin=local+30+localNameLength+localExtraLength

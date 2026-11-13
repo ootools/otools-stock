@@ -100,5 +100,11 @@
     }
   ],
   "parentRegistration": "local .gitmodules and gitlink registered; scoped parent push follows",
-  "rawLogoDirectNetwork": "local direct raw.githubusercontent.com request failed; exact tagged SVG exists and was verified via GitHub contents API; market points to canonical raw tag URL"
+  "rawLogoDirectNetwork": "local direct raw.githubusercontent.com request failed; exact tagged SVG exists and was verified via GitHub contents API; market points to canonical raw tag URL",
+  "releaseGateHardening": {
+    "issue": "encrypted/inconsistent local ZIP headers",
+    "regression": "outer hashes refreshed after malformed header mutation",
+    "status": "fixed and tested",
+    "publishedArtifacts": "re-downloaded six archives pass stricter validation unchanged"
+  }
 }

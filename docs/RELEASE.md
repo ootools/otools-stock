@@ -76,3 +76,5 @@ node scripts/publish-market.mjs | sed '/^::add-mask::/d'
 - 发布元信息与包摘要见 `artifacts/release-verification.json` 和 `.txt`；对应 Release 附件 `SHA256SUMS`。
 - 标记的 source tag 不会因后续发布记录文档提交而移动。父仓库仍只提交该子模块及 `.gitmodules`。
 - 本机 raw.githubusercontent.com 直连请求失败，已通过 GitHub contents API 核对 tag 下 SVG 存在；市场记录使用正确的原始 tag URL。尚未声称六系统实机 UI 验收通过。
+
+发布器复核补强：ZIP 加密标志/数据描述符与本地头 CRC、压缩方法、大小不一致会被拒绝；模拟修改 ZIP 并重算外层摘要的回归测试通过。已发布六包重新用更严格规则通过，不需要移动 tag 或替换附件。

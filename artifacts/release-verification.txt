@@ -20,3 +20,5 @@ Privacy/safety: market PAT entered only process environment; mask token lines re
 Scope: pure frontend assets share the same payload across six architecture names; no fake native libraries.
 Manual QA remains: actual installed OTools Panel/OS runtime screenshots, notifications/audio UI unverified (no connected browser).
 Local direct raw.githubusercontent.com network failed; tagged logo source was confirmed through GitHub contents API and correct raw URL persisted in marketplace. No false direct-network success claim.
+
+Post-release gate hardening: encrypted ZIP flags and local/central CRC, method or size disagreement are rejected even if outer SHA256 is updated. Adversarial RED→GREEN regression passed; original downloaded six artifacts passed the stricter verifier unchanged. Runtime payload/tag not changed.
