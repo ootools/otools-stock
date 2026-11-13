@@ -1,0 +1,27 @@
+OTools Stock v0.1.0 verification — 2026-11-13 Asia/Shanghai
+Follow-up: public API / K-line support explicitly documented and real history verification expanded.
+Source: otools-stock/
+Manifest: packid=otools-stock, uuid=otools-stock, openMode=panel, devUrl=127.0.0.1:6552 (source only)
+
+Fresh verification commands (all exit 0):
+  pnpm build
+  OTOOLS_LIVE_DOM=1 pnpm test
+  pnpm typecheck
+  pnpm smoke:market
+  pnpm run pack
+  pnpm verify
+
+Vitest: 16 files, 128 assertions passed, 0 failures.
+Node: 15 tests passed including exact production bundle host contract/live-provider DOM and public K-line matrix/OHLC validation; no skipped tests.
+Live K-line verification: A/HK/US daily, weekly, monthly (9 combinations), all HTTP 200 with >=120 valid unique OHLC candles.
+Documentation: docs/PUBLIC_MARKET_API.md (request URLs/curl/period params/OHLC order/adjustment fallback/US venue/CORS and host transport).
+No API key, login, provider rewrite, saved-state/schema/default-view change, or simulated data introduced.
+
+Archive: 8 entries; no native libraries; inner/outer manifests agree; CRC and SHA256 verified.
+Archive bytes: 84422
+Archive SHA256: 522cc521e6ef6153c39fe2f6079c079ed2b32a83f398bb4c24b15ace20d7d913
+
+Limits/remaining verification:
+  No connected Browser in this session; no screenshot/real-browser layout/actual installed Panel claim.
+  No commits, branch/worktree, remote repository registration, release or market publication.
+  Primary public endpoints were checked directly. No published official API SLA or redistribution rights have been established; service may change, limit, delay or fail.

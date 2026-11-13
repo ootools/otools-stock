@@ -1,0 +1,10 @@
+$ node scripts/verify-plugin.mjs
+✓ plugin.json 合法：otools-stock@0.1.0
+✓ SHA256SUMS 覆盖 3 个文件且全部匹配
+✓ 默认 panel；已去除 devUrl / quickDev
+✓ ZIP 8 个条目，CRC 全部通过
+✓ 入口 dist/index.html 与 logo.svg 都在包内，内外清单一致
+✓ 入口 HTML 含 OTools 宿主桥
+⚠ 包内没有 .wasm（纯前端插件可忽略；wasm 插件请在 plugin.json 设 "wasm": true）
+
+otools-stock-0.1.0.oplg 校验通过（8 个条目）。

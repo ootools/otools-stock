@@ -1,0 +1,43 @@
+name: build-plugin
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  portable-six-pack:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 11.25.0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: pnpm
+      - name: Install locked dependencies
+        run: pnpm install --frozen-lockfile
+      - name: Typecheck
+        run: pnpm typecheck
+      - name: Build portable frontend
+        run: pnpm build
+      - name: Test domain, UI, production bundle and six-package contract
+        run: pnpm test
+      - name: Package all six OTools distributions
+        run: pnpm run pack
+      - name: Verify all six archives
+        run: pnpm verify
+      - uses: actions/upload-artifact@v4
+        with:
+          name: otools-stock-six-platform-packages
+          path: dist-pack/release/
+          if-no-files-found: error
+          retention-days: 14

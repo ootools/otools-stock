@@ -1,0 +1,6 @@
+$ node scripts/smoke-market.mjs
+quotes: HTTP 200, 3 securities, 1366 bytes
+search: HTTP 200, AAPL found
+CN day: HTTP 200, 121 real data points
+HK minute: HTTP 200, 199 real data points
+US day: HTTP 200, 120 real data points

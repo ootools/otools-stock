@@ -1,0 +1,145 @@
+$ vitest run && node --test tests/*.test.mjs
+
+ RUN  v3.2.4 /Users/admin/Documents/Repos/xyito/otools/otools-stock
+
+ ✓ tests/platform.test.ts (3 tests) 40ms
+ ✓ tests/portfolio.test.ts (11 tests) 10ms
+ ✓ tests/snapshot.test.ts (13 tests) 29ms
+ ✓ tests/desk.test.ts (14 tests) 25ms
+ ✓ tests/import-ui.test.ts (2 tests) 87ms
+ ✓ tests/chart.test.ts (5 tests) 103ms
+ ✓ tests/review-regressions.test.ts (7 tests) 111ms
+ ✓ tests/market.test.ts (21 tests) 27ms
+ ✓ tests/portfolio-missing.test.ts (1 test) 6ms
+ ✓ tests/poller.test.ts (3 tests) 5ms
+ ✓ tests/http.test.ts (3 tests) 9ms
+ ✓ tests/app.test.ts (6 tests) 310ms
+ ✓ tests/alerts.test.ts (6 tests) 3ms
+ ✓ tests/symbols.test.ts (29 tests) 2ms
+ ✓ tests/persistence.test.ts (3 tests) 4ms
+ ✓ tests/poller-sync.test.ts (1 test) 2ms
+
+ Test Files  16 passed (16)
+      Tests  128 passed (128)
+   Start at  14:04:35
+   Duration  1.74s (transform 1.10s, setup 0ms, collect 2.76s, tests 772ms, environment 7.27s, prepare 1.11s)
+
+TAP version 13
+# Subtest: live check covers A/HK/US daily, weekly and monthly candles
+ok 1 - live check covers A/HK/US daily, weekly and monthly candles
+  ---
+  duration_ms: 0.675209
+  type: 'test'
+  ...
+# Subtest: reads the actual requested period and both adjusted and unadjusted field shapes
+ok 2 - reads the actual requested period and both adjusted and unadjusted field shapes
+  ---
+  duration_ms: 1.093958
+  type: 'test'
+  ...
+# Subtest: rejects provider errors, wrong symbol, empty arrays and unusable fake candles
+ok 3 - rejects provider errors, wrong symbol, empty arrays and unusable fake candles
+  ---
+  duration_ms: 0.722125
+  type: 'test'
+  ...
+# Subtest: counts only unique usable dates, not duplicate rows or damaged record length
+ok 4 - counts only unique usable dates, not duplicate rows or damaged record length
+  ---
+  duration_ms: 0.2055
+  type: 'test'
+  ...
+# Subtest: production package keeps panel mode and strips only development switches without mutating source
+ok 5 - production package keeps panel mode and strips only development switches without mutating source
+  ---
+  duration_ms: 0.526083
+  type: 'test'
+  ...
+# Subtest: publish metadata uses immutable version tag logo and sanitized package manifest
+ok 6 - publish metadata uses immutable version tag logo and sanitized package manifest
+  ---
+  duration_ms: 0.249875
+  type: 'test'
+  ...
+# Subtest: standalone archive and all metadata pass CRC/SHA256 validation; tampering is rejected
+ok 7 - standalone archive and all metadata pass CRC/SHA256 validation; tampering is rejected
+  ---
+  duration_ms: 86.410416
+  type: 'test'
+  ...
+# Subtest: six platform variants exactly match existing OTools architecture and market conventions
+ok 8 - six platform variants exactly match existing OTools architecture and market conventions
+  ---
+  duration_ms: 0.803209
+  type: 'test'
+  ...
+# Subtest: six-package market payload declares exact URLs and no unavailable universal download
+ok 9 - six-package market payload declares exact URLs and no unavailable universal download
+  ---
+  duration_ms: 0.330041
+  type: 'test'
+  ...
+# Subtest: six-package aggregate passes verification; missing or corrupt platform files fail
+ok 10 - six-package aggregate passes verification; missing or corrupt platform files fail
+  ---
+  duration_ms: 122.781333
+  type: 'test'
+  ...
+# Subtest: shipped bundle initializes host HTTP/state and the UI, keeps native plugin dispatch unused
+ok 11 - shipped bundle initializes host HTTP/state and the UI, keeps native plugin dispatch unused
+  ---
+  duration_ms: 182.470958
+  type: 'test'
+  ...
+# Production live DOM: 1,435.36, 6 watch stocks, real minute SVG path
+# Subtest: actual production provider endpoints produce live quote/chart DOM via preview-policy URLs
+ok 12 - actual production provider endpoints produce live quote/chart DOM via preview-policy URLs
+  ---
+  duration_ms: 331.565125
+  type: 'test'
+  ...
+# Subtest: independent panel manifest and package versions agree
+ok 13 - independent panel manifest and package versions agree
+  ---
+  duration_ms: 0.643083
+  type: 'test'
+  ...
+# Subtest: official SDK runtime snapshot is included in version control rather than ignored dist
+ok 14 - official SDK runtime snapshot is included in version control rather than ignored dist
+  ---
+  duration_ms: 0.511959
+  type: 'test'
+  ...
+# Subtest: proxy builds only fixed HTTPS provider targets
+ok 15 - proxy builds only fixed HTTPS provider targets
+  ---
+  duration_ms: 0.789708
+  type: 'test'
+  ...
+# Subtest: preview proxy rejects arbitrary host, path, control characters and excessive batches
+ok 16 - preview proxy rejects arbitrary host, path, control characters and excessive batches
+  ---
+  duration_ms: 1.0285
+  type: 'test'
+  ...
+# Subtest: loopback proxy rejects non-GET, foreign Host and cross-origin requests before network
+ok 17 - loopback proxy rejects non-GET, foreign Host and cross-origin requests before network
+  ---
+  duration_ms: 0.524792
+  type: 'test'
+  ...
+# Subtest: public K-line routes map all three markets and daily/weekly/monthly qfq parameters
+ok 18 - public K-line routes map all three markets and daily/weekly/monthly qfq parameters
+  ---
+  duration_ms: 0.255625
+  type: 'test'
+  ...
+1..18
+# tests 18
+# suites 0
+# pass 18
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 689.1495

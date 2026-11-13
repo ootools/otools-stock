@@ -1,0 +1,10 @@
+$ node scripts/verify-plugin.mjs dist-pack/release
+✓ SHA256 覆盖 8 文件，默认 panel，无原生或开发配置
+✓ otools-stock-0.1.0-windows.oplg：8 条目，CRC、内外清单及前端资源通过
+✓ otools-stock-0.1.0-windows-arm.oplg：8 条目，CRC、内外清单及前端资源通过
+✓ otools-stock-0.1.0-macos.oplg：8 条目，CRC、内外清单及前端资源通过
+✓ otools-stock-0.1.0-macos-intel.oplg：8 条目，CRC、内外清单及前端资源通过
+✓ otools-stock-0.1.0-linux.oplg：8 条目，CRC、内外清单及前端资源通过
+✓ otools-stock-0.1.0-linux-arm.oplg：8 条目，CRC、内外清单及前端资源通过
+
+6 平台包 校验通过。

@@ -1,0 +1,13 @@
+$ node scripts/smoke-market.mjs
+quotes: HTTP 200, 3 securities, 1365 bytes
+search: HTTP 200, AAPL found
+HK minute: HTTP 200, 207 valid minute points
+CN day: HTTP 200, 121 valid candles, qfqday, 2026-05-20 → 2026-11-13
+CN week: HTTP 200, 120 valid candles, qfqweek, 2024-07-26 → 2026-11-13
+CN month: HTTP 200, 120 valid candles, qfqmonth, 2016-12-30 → 2026-11-13
+HK day: HTTP 200, 121 valid candles, day, 2026-05-22 → 2026-11-13
+HK week: HTTP 200, 120 valid candles, week, 2024-08-02 → 2026-11-13
+HK month: HTTP 200, 120 valid candles, month, 2016-12-30 → 2026-11-13
+US day: HTTP 200, 120 valid candles, qfqday, 2026-05-26 → 2026-11-12
+US week: HTTP 200, 120 valid candles, qfqweek, 2024-08-02 → 2026-11-12
+US month: HTTP 200, 120 valid candles, qfqmonth, 2016-12-30 → 2026-11-12

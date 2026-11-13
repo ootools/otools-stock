@@ -1,0 +1,39 @@
+{
+  "name": "otools-stock",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@11.25.0",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "dev": "vite --host 127.0.0.1 --port 6552 --strictPort",
+    "test": "vitest run && node --test tests/*.test.mjs",
+    "test:unit": "vitest run",
+    "typecheck": "vue-tsc --noEmit --pretty false",
+    "build": "node scripts/build-web.mjs",
+    "pack": "node scripts/pack-plugin.mjs --all-platforms",
+    "verify": "node scripts/verify-plugin.mjs dist-pack/release",
+    "preview": "node scripts/serve-dist.mjs",
+    "smoke:market": "node scripts/smoke-market.mjs",
+    "pack:plugin": "node scripts/pack-plugin.mjs --all-platforms",
+    "pack:universal": "node scripts/pack-plugin.mjs"
+  },
+  "dependencies": {
+    "@tauri-apps/api": "2.10.1",
+    "@tauri-apps/plugin-dialog": "2.6.0",
+    "otools-plugin-sdk": "workspace:*",
+    "vue": "3.5.27"
+  },
+  "devDependencies": {
+    "@types/node": "22.19.8",
+    "@vitejs/plugin-vue": "5.2.4",
+    "@vue/test-utils": "2.4.6",
+    "jsdom": "26.1.0",
+    "typescript": "5.9.3",
+    "vite": "6.4.1",
+    "vitest": "3.2.4",
+    "vue-tsc": "2.2.12"
+  }
+}

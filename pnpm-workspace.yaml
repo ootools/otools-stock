@@ -1,0 +1,4 @@
+packages:
+  - vendor/otools-plugin-sdk
+allowBuilds:
+  esbuild: true

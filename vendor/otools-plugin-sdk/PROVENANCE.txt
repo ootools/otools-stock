@@ -1,0 +1,4 @@
+Official OTools SDK snapshot
+Source: ../otools/vendor/otools-plugin-sdk
+Captured: 2026-11-13
+Runtime/dist + source and license vendored for independent builds.

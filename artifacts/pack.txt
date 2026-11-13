@@ -1,0 +1,2 @@
+$ node scripts/pack-plugin.mjs
+{"packid":"otools-stock","uuid":"otools-stock","version":"0.1.0","output":"/Users/admin/Documents/Repos/xyito/otools/otools-stock/dist-pack/otools-stock-0.1.0.oplg","entries":8,"totalBytes":243601,"nativeLibs":[]}
