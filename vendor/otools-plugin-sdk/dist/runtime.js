@@ -1,6 +1,6 @@
 import { attachTransformListener as G, detachTransformListener as V, listenNativeTopic as q } from "./native-event-bridge.js";
 import { ensurePopupManager as z } from "./popup-manager.js";
-const X = "otools:", Q = "otools-tauri:", J = { kind: "Any" }, O = /* @__PURE__ */ new Set(["crop-images-updated", "otools:custom-open"]), K = /* @__PURE__ */ new Set([
+const X = "otools:", Q = "otools-tauri:", J = { kind: "Any" }, O = /* @__PURE__ */ new Set(["crop-images-updated", "otools:custom-open", "otools:deep-link-ready"]), K = /* @__PURE__ */ new Set([
   "set_window_theme",
   "update_tray_menu"
 ]), Y = /* @__PURE__ */ new Set([

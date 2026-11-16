@@ -19,7 +19,7 @@ const LOCAL_TAURI_EVENT_PREFIX = "otools-tauri:";
 const TAURI_LISTEN_TARGET = { kind: "Any" } as const;
 // Gallery editors are separate host webviews. Their update event must cross the
 // Tauri event bus rather than the plugin dylib/local DOM event bridge.
-const HOST_OWNED_EVENTS = new Set(['crop-images-updated', 'otools:custom-open']);
+const HOST_OWNED_EVENTS = new Set(['crop-images-updated', 'otools:custom-open', 'otools:deep-link-ready']);
 
 const DIRECT_TAURI_NOOP_COMMANDS = new Set([
   "set_window_theme",

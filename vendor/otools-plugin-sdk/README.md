@@ -115,3 +115,25 @@ npm publish
 ## 示例
 
 参考 [examples/minimal-vite](./examples/minimal-vite)，这是一个最小化的 Vite 示例，保留官方 Tauri import，同时通过 SDK 插件运行在 OTools 插件环境里。
+
+
+### Temporary host chrome theme
+
+Dark-only/light-only plugin pages can request matching TABS/Panel chrome without changing user settings:
+
+```ts
+await window.otools?.setTempHostTheme?.('dark'); // or 'light'
+await window.otools?.setTempHostTheme?.(null);   // clear this page's request
+```
+
+`setTempHostTheme(theme: 'light' | 'dark' | null): Promise<void>` is scoped to the authenticated plugin page. Background calls are remembered but affect chrome only when that page is selected. Leaving the page, returning Home, or closing it restores the latest user theme. TABS and Panel instances are independent; no preference/accent is persisted or broadcast to other plugins. New pages declare again. Browser/CLI iframe requests are source-checked by the host. Older hosts can be supported using the optional chaining above.
+
+### Current page mode
+
+`window.otools.pageMode(): 'panel' | 'tabs' | 'window'` is synchronous and read-only. A plugin can hide its duplicate logo in Panel:
+
+```ts
+const showLogo = window.otools?.pageMode?.() !== 'panel';
+```
+
+`panel` means a plugin embedded in Panel; `tabs` means an embedded TABS page; `window` means an independent/custom window or an unrecognized container. The native host injects context before plugin preload, and recreating a page in a different container supplies the new mode. The getter reads the current page only and performs no IPC or preference writes. Older same-origin browser pages can use the host iframe marker; an inaccessible/unidentified cross-origin container conservatively returns `window`. Exported SDK helpers: `PageMode`, `createPageModeGetter`.
